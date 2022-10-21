@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+.backGround {
+    width: 100vw;
+    height: 100vh;
+    background-color: #EEF3F8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backBanner {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 75%;
+    background-color: #3095B5;
+
+}
+
+.signInBox {    
+    width: 50%;
+    height: 70%;
+
+    background: #FDFDFD;
+    box-shadow: 1px 1px 20px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+
+    position: relative;
+    left: 20%;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    padding: 32px 44px;
+    box-sizing: border-box;
+}
+
+/*----------------------------------*/
+
+.head1 {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    color: #2B6C88;
+    font-size: 32px;
+}
+
+.lbl1 {
+    font-family: 'Kanit', sans-serif;
+    color: #747474;
+    font-size: 16px;
+
+    margin-top: 15px;
+    margin-bottom: 3px;
+}
+
+.inp1 {
+    padding: 5px 12px;
+    background: #F7F7F7;
+    border: 1px solid rgba(187, 187, 187, 0.853);
+    border-radius: 3px;
+    
+    font-size: 18px;
+    color: #5a5a5a;
+}
+
+.buttonDiv {
+    position: absolute;
+    bottom: 32px;
+    right: 30px;
+}
+
+.btn1 {
+    padding: 5px 2px;
+    margin: 0 16px;
+    background: #1C53BE;
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    color: white;
+    width: 110px;
+    font-family: 'Kanit', sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
