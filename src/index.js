@@ -1,7 +1,10 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import classes from "./index.module.css";
+
+import Login from "./Login";
 import Home from "./Home";
-import Login from './Login';
 
 export default function App() {
   return (
@@ -10,7 +13,6 @@ export default function App() {
         
         <Route index element={<Login />} />
         <Route path="Home" element={<Home />} />
-
         
       </Routes>
     </BrowserRouter>
