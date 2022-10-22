@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+body.active-modal {
+    overflow-y: hidden;
+}
+.backGround {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #2c6b75;
+    padding: 14px 28px;
+    border-radius: 12px;
+    width: 300px;
+    height: 355px;
+}
+
+/*----------------------------------*/
+
+.head1 {
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    
+}
+
+.lbl1 {
+    font-family: 'Kanit', sans-serif;
+    color: #ffffff;
+    font-size: 13px;
+
+    margin-top: 20px;
+    margin-bottom: 3px;
+}
+
+.inp1 {
+    padding: 2px 12px;
+    background: #d0fdff;
+    border: 1px solid rgba(187, 187, 187, 0.853);
+    border-radius: 3px;
+    
+    font-size: 13px;
+    color: #1c5861;
+    margin-left: 9px;
+    margin-bottom: 10px;
+}
+
+.btn1 {
+    position: absolute;
+    margin-left: 230px;
+    padding: 3px 2px;
+    background: #fdfdfd;
+    border-radius: 5px ;
+
+    color: #266b75;
+    width: 70px;
+    font-family: 'Kanit', sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #ffffff;
+    font-family: 'Kanit', sans-serif;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #266b75;
+    border: 3px solid #d0fdff;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #ffffff;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 3px;
+    top: px;
+    width: 5px;
+    height: 10px;
+    border: solid #000000;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
