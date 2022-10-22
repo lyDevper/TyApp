@@ -22,8 +22,8 @@ function Login() {
             value={password} onChange={(e) => setPassword(e.target.value)} />
 
             <div className='buttonDiv'>
-                <button className='btn1' onClick={goSignUp(username, password)}>สมัครสมาชิก</button>
-                <button className='btn1' onClick={goSignIn(username, password)}>เข้าสู่ระบบ</button>
+                <button className='btn1' onClick={() => goSignUp(username, password)} to='/Home'>สมัครสมาชิก</button>
+                <button className='btn1' onClick={() => goSignIn(username, password)} to='/Home'>เข้าสู่ระบบ</button>
             </div>
         </div>
     </div>
@@ -33,6 +33,8 @@ function Login() {
 function goSignIn(username, password) {
     console.log('Signing in...' + username);
     console.log(password);
+
+    window.location.href='/Home';
 }
 
 function goSignUp(username, password) {
