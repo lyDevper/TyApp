@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+.backGround {
+    width: 100vw;
+    height: 100vh;
+    background-color: #E8E8E8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backBanner {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 20%;
+    background-color: #388DB1;
+    
+
+}
+.contentBlock {
+    padding-left: 50px;
+    padding-top: 130px;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 70%;
+    background-color: #E8E8E8;
+
+}
+/*----------------------------------*/
+
+.head1 {
+    font-family: 'Kanit', sans-serif;
+    color: #2B6C88;
+    font-weight: 300;
+    font-size: 35px;
+}
+
+.lbl1 {
+    font-family: 'Kanit', sans-serif;
+    color: #547878;
+    font-size: 20px;
+
+    margin-top: 50px;
+    margin-bottom: 3px;
+}
+.lbl2 {
+    font-family: 'Kanit', sans-serif;
+    color: #547878;
+    font-size: 20px;
+
+    margin-top: 50px;
+    margin-bottom: 3px;
+    margin-left: 40px;
+}
+
+.inp2 {
+    padding-left: 20px;
+    height: 30px;
+    width: 500px;
+    background: #F7F7F7;
+    border: 1px solid rgba(187, 187, 187, 0.853);
+    border-radius: 3px;
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
+    
+    font-size: 18px;
+    color: #5a5a5a;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.inp1 {
+    height: 30px;
+    width: 520px;
+    background: #F7F7F7;
+    border: 1px solid rgba(187, 187, 187, 0.853);
+    border-radius: 3px;
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
+    
+    font-size: 18px;
+    color: #5a5a5a;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.realinp{
+    padding-left: 20px;
+    height: 25px;
+    width: 470px;
+    background: #F7F7F7;
+    border: 1px solid #F7F7F7;
+
+    
+    font-size: 18px;
+    color: #5a5a5a;
+
+}
+.inpicon {
+    background: #F7F7F7;
+
+}
+
+.btnSave {
+    padding: 8px 2px;
+    margin: 50px 500px;
+    background: #077CD0;
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+
+    color: white;
+    width: 90px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.btnOut {
+    padding: 8px 2px;
+    margin-top: 460px;
+    margin-left: 150px;
+    background: #155275;
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    color: white;
+    width: 150px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+}
+.btnHome {
+    padding: 8px 2px;
+    background: #1C53BE;
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    color: white;
+    width: 110px;
+    font-family: 'Kanit', sans-serif;
+}
+button {
+    cursor: pointer;
+    border: none;
+}
+.line{
+    position: absolute;
+    left: 1;
+    color: #9DB4CA;
+    background: #9DB4CA;
+    height: 1.5px;
+    width: 350px;
+    border : #9DB4CA;
+}
