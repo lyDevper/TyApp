@@ -1,0 +1,121 @@
+import os
+import uuid
+from flask import Flask,request,session,jsonify
+from flask_cors import CORS
+from dotenv import load_dotenv
+from pymongo import MongoClient
+
+load_dotenv()
+
+PORT = int(os.getenv('PORT'))
+DEBUG = os.getenv('DEBUG').strip().lower() == "true"
+HOST = os.getenv('HOST').strip()
+
+client = MongoClient(HOST)
+
+db = client.get_database('app_meeting')
+app = Flask(__name__)
+cors = CORS(app)
+
+
+
+@app.route("/login",methods=["GET"])
+def login():
+    try:
+        users=db.user
+        user={'email':request.json['email'],'password':request.json['password']}
+        requiredField = [
+                     ("email"),
+                     ("password")
+                     ]
+
+        for fieldValue in requiredField:
+            if fieldValue not in request.json:
+                return {'message':"Missing field"}, 400
+
+        if users.find_one(user):
+            user=users.find_one(user)
+            user.pop('_id')
+            return jsonify(user),200
+        else:
+            return {'message':'Wrong Email/Password'},400
+
+
+    except:
+        return {'message':'error'},400
+
+
+@app.route("/event",methods=["GET"])
+def event():
+    members=db.member_event
+    try:
+        all_event=[]
+        events = db.event.aggregate([
+                {
+                    '$lookup' : 
+                    {
+                        'from': 'user',
+                        'localField': 'user_id',
+                        'foreignField': 'user_id',
+                        'as': 'user' }
+                },{
+                    '$unwind': '$user'
+                }
+                ])
+
+        for e in events:
+            e['member']=members.count_documents({'event_id':e['event_id'],'left_datetime':None})
+            e.pop('_id')
+            e['user'].pop('_id')
+            all_event.append(e)
+        return jsonify({'events':all_event}),200
+    except:
+        return {'message':'error'},400
+
+@app.route("/join_event",methods=["POST"])
+def join_event():
+    members=db.member_event
+    try :
+        amount=request.json['amount']
+        user_id=request.json['user_id']
+        event_id=request.json['event_id']
+        if(members.count_documents({'event_id':event_id,'left_datetime':None})>=int(amount)):
+            return{'message':'จำนวนคนครบแล้ว'},400
+
+        if(members.find_one({'event_id':event_id,'user_id':user_id,'left_datetime':None})):
+            return{'message':'เข้าร่วมอยู่แล้ว'},400
+
+        add_member={'event_id':event_id,'user_id':user_id,'joined_datetime':None,'left_datetime':None}
+        members.insert_one(add_member)
+        return {'message':'เข้าร่วมสำเร็จ'},200
+    except :
+        return {'message':'เข้าร่วมไม่สำเร็จ'},400
+
+
+
+@app.route("/create_event",methods=["POST"])
+def create_event():
+    events=db.event
+    members_event=db.member_event
+    try:
+        event_id = uuid.uuid4().hex
+        user_id = request.json['user_id']
+        event_name = request.json['eventname']
+        type = request.json['type']
+        date = request.json['date']
+        time = request.json['time']
+        place = request.json['place']
+        amount = request.json['amount']
+        other = request.json['other']
+        noti = request.json['noti']
+
+        event = {'event_id':event_id,'user_id':user_id,'event_name':event_name,'type':type,'date':date,'time':time,'place':place,'amount':amount,'other':other,'noti':noti}
+        events.insert_one(event)
+        members_event.insert_one({'event_id':event_id,'user_id':user_id,'joined_datetime':None,'left_datetime':None})
+
+        return {'message':'create_event success'},201
+    except:
+        return {'message':'create_event fail'},400
+
+if __name__ == '__main__':
+    app.run(port=PORT,debug=DEBUG)
