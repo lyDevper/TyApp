@@ -3,7 +3,7 @@ import { useState } from 'react';
 import classes from './Login.module.css';
 
 function Login() {
-    const [username, setUserame] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
   return (
@@ -15,33 +15,32 @@ function Login() {
 
             <label className={classes.lbl1}>Email :</label>
             <input type="Email" className={classes.inp1}
-            value={username} onChange={(e) => setUserame(e.target.value)} />
+            value={email} onChange={(e) => setEmail(e.target.value)} />
 
             <label className={classes.lbl1}>Password :</label>
             <input type="Password" className={classes.inp1}
             value={password} onChange={(e) => setPassword(e.target.value)} />
 
             <div className={classes.buttonDiv}>
-                <button className={classes.btn1} onClick={() => goSignUp(username, password)}>สมัครสมาชิก</button>
-                <button className={classes.btn1} onClick={() => goSignIn(username, password)}>เข้าสู่ระบบ</button>
+                <button className={classes.btn1} onClick={() => goSignUp()}>สมัครสมาชิก</button>
+                <button className={classes.btn1} onClick={() => goSignIn(email, password)}>เข้าสู่ระบบ</button>
             </div>
         </div>
     </div>
   );
 }
 
-function goSignIn(username, password) {
-    console.log('Signing in...' + username);
-    console.log(password);
-
-    if(username=='' || password=='')
-        return;
-
-    window.location.href='/Home';
+function goSignIn(email, password) {
+    if(email!='' && password!=''){
+        console.log('Signing in...' + email);
+        console.log(password);
+        window.location.href='/Home';
+    }
 }
 
-function goSignUp(username, password) {
+function goSignUp() {
     console.log('Signing up...');
+    window.location.href='/Register';
 }
 
 export default Login;

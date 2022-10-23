@@ -2,6 +2,7 @@ import { useState } from 'react';
 import classes from './Home.module.css';
 import NewEvent from './subComponents/NewEvent';
 import EventCard from './subComponents/EventCard';
+import Filter from './Filter';
 
 let testData1 = 
 {
@@ -51,7 +52,7 @@ function Home() {
         <div className={classes.searchPanel}></div>
         <div className={classes.contentDiv}>
           <div className={classes.headBtnDiv}>
-            <button className={classes.newEventBtn}>สร้างนัดใหม่</button>
+            <NewEvent></NewEvent>
             <button className={classes.mapBtn}>แผนที่</button>
           </div>
 
@@ -65,7 +66,7 @@ function Home() {
 
         </div>
 
-        <NewEvent></NewEvent>
+       
     </div>
   );
 }

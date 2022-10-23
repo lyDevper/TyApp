@@ -91,7 +91,6 @@ return (
     </>
   )
 }
-
 function toggleModal(eventname,type,date,time,place,amount,other,noti,modal,setModal){
   if (eventname!=''&&date!=''&&time!=''&&place!=''&&amount!=''){
     console.log('New Event')
@@ -106,6 +105,4 @@ function toggleModal(eventname,type,date,time,place,amount,other,noti,modal,setM
     setModal(!modal);
   }
 };
-
 export default NewEvent;
-export {toggleModal};

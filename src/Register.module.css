@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+.backGround {
+    width: 100vw;
+    height: 100vh;
+    background-color: #EEF3F8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backBanner {
+    margin-top: 330px;
+    height: 40%;
+    width: 100%;
+    background-color: #3095B5;
+
+}
+
+.signUpBox {    
+    width: 50%;
+    height: 70%;
+
+    background: #FDFDFD;
+    box-shadow: 1px 1px 20px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    padding: 32px 44px;
+    box-sizing: border-box;
+}
+
+/*----------------------------------*/
+
+.head1 {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    color: #2B6C88;
+    font-size: 32px;
+}
+
+.lbl1 {
+    font-family: 'Kanit', sans-serif;
+    color: #747474;
+    font-size: 16px;
+
+    margin-top: 15px;
+    margin-bottom: 3px;
+}
+
+.inp1 {
+    padding: 5px 12px;
+    background: #F7F7F7;
+    border: 1px solid rgba(187, 187, 187, 0.853);
+    border-radius: 3px;
+    
+    font-size: 18px;
+    color: #5a5a5a;
+}
+
+.buttonDiv {
+    position: absolute;
+    bottom: 32px;
+    right: 30px;
+}
+
+.btn1 {
+    padding: 8px 2px;
+    margin: 0 16px;
+    background: #1C53BE;
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    color: white;
+    width: 110px;
+    font-family: 'Kanit', sans-serif;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+/* icon */
+  /* Step 1: Common Properties: All required to make icons render reliably - we did this above but it's included here for the full demo */
+  .icon::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Step 2: Reference Individual Icons */
+  /* Note: Make sure to include the correct weight and Unicode value for the icon */
+
+  /* an example rule targeting any element with the "account" class to render fa-user icon in the Solid style */
+  .account::before {
+    font: var(--fa-font-solid);
+    content: "\f007";
+  }
+
+  /* an example rule targeting any element with the "warning" class to render fa-triangle-exclamation icon in the Regular style */
+  .warning::before {
+    font: var(--fa-font-regular);
+    content: "\f071";
+  }
+
+  /* an example rule targeting any element with the "updates" class to render fa-newspaper icon in the Light style */
+  .updates::before {
+    font: var(--fa-font-light);
+    content: "\f1ea";
+  }
+
+   /* an example rule targeting any element with the "delete" class to render fa-trash icon in the Sharp Solid style */
+  .delete::before {
+    font: var(--fa-font-sharp-solid);
+    content: "\f1f8";
+  }
+
+  /* an example rule targeting any element with the "gaming" class to render fa-discord Brand icon */
+  .gaming::before {
+    font: var(--fa-font-brands);
+    content: "\f392";
+  }
