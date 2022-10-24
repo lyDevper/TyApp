@@ -54,23 +54,27 @@ function Home() {
   return (
     <div className={classes.backGround}>
         <div className={classes.headPanel}>
-          <HeadPanel></HeadPanel>
+        <HeadPanel></HeadPanel>
         </div>
         <div className={classes.contentDiv}>
-          <div className={classes.headBtnDiv}>
-            <NewEvent></NewEvent>
-            <button className={classes.mapBtn}>
-              <FaMapMarkedAlt></FaMapMarkedAlt>
-            </button>
-            
-          </div>
+          <div className={classes.headBtnDiv} >
 
+            {/* map button*/}
+            <button className={classes.mapBtn}>
+              <FaMapMarkedAlt size={30}/>
+            </button>
+          <br/>
+          <br/>
+          </div>
           <div className={classes.eventCards}>
             {
               //redering many EventCard components by passing eventData as a props and must pass some unique key
               eventDataList.map((eventData) => 
               (<EventCard key={eventData.event_id} eventData={eventData}></EventCard>))
             }
+          </div>
+          <div className={classes.frontGround}>
+              <NewEvent></NewEvent>
           </div>
                     
         </div>

@@ -46,7 +46,7 @@ function EventCard(props) {
                     <ListItem lblText={'รายละเอียดเพิ่มเติม'} detailText={eventData.etc}></ListItem>
                 </ul>
 
-                <button className={classes.joinBtn}>เข้าร่วม >></button>
+                <button className={classes.joinBtn}>เข้าร่วม</button>
             </div>            
         </div>
     );

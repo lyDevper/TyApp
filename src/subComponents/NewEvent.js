@@ -30,7 +30,7 @@ return (
     <>
         {/* popup */}
       <button onClick={openClose} className={classes.newEventBtn}>
-        สร้างนัดใหม่ <AiOutlinePlus></AiOutlinePlus>
+       <AiOutlinePlus size={30}/>
       </button>
 
       {modal && (
