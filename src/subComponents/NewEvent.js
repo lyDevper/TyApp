@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import classes from './NewEvent.module.css';
 
+import { AiOutlinePlus } from "react-icons/ai";
+
 function NewEvent() {
     const [modal, setModal] = useState(false);
   
@@ -28,7 +30,7 @@ return (
     <>
         {/* popup */}
       <button onClick={openClose} className={classes.newEventBtn}>
-        สร้างนัดใหม่
+        สร้างนัดใหม่ <AiOutlinePlus></AiOutlinePlus>
       </button>
 
       {modal && (

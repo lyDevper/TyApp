@@ -28,14 +28,41 @@ function EventCard(props) {
     const eventData = props.eventData; //get eventData object from pased props
 
     return (
-        <div>
-            Yeeeeehaaaaa
-            <br />
-            {eventData.event_name}
-            <br />
-            {eventData.category}
+        <div className={classes.card}>            
+            <div className={classes.leftBanner}>
+                <div className={classes.bannerStripe}>
+                    {eventData.category}
+                </div>                
+            </div>
+            <div className={classes.rightBck}>
+                <h2 className={classes.cardTitle}>{eventData.event_name}</h2>
+                <hr className={classes.hr1}/>
+
+                <ul className={classes.detailUl}>
+                    <ListItem lblText={'สถานที่'} detailText={eventData.location.title}></ListItem>
+                    <ListItem lblText={'เวลา'} 
+                    detailText={eventData.date + ' (' + eventData.start_time + ' - ' + eventData.end_time + ')'}></ListItem>
+                    <ListItem lblText={'จำนวนคน'} detailText={eventData.amount}></ListItem>
+                    <ListItem lblText={'รายละเอียดเพิ่มเติม'} detailText={eventData.etc}></ListItem>
+                </ul>
+
+                <button className={classes.joinBtn}>เข้าร่วม >></button>
+            </div>            
         </div>
     );
+}
+
+//component of li used only for a line of detail in this file
+function ListItem({lblText, detailText}) {
+    return (
+        <li>
+            <label className={classes.detailLbl}>
+                {lblText}
+                <a>&nbsp;:&nbsp;&nbsp;&nbsp;</a>
+            </label>            
+            <a className={classes.detailTxt}>{detailText}</a>
+        </li>
+    )
 }
 
 export default EventCard;

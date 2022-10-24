@@ -1,0 +1,110 @@
+:root {
+    --th_font1: 'Kanit', sans-serif;
+    --cardRadius: 12px;
+}
+
+.card {
+    width: 100%;
+    max-width: 740px;
+    min-height: 240px;
+    margin: 16px 0;
+
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.35);
+    border-radius: var(--cardRadius);
+
+    display: flex;
+    flex-direction: row;
+
+    position: relative;
+}
+
+.leftBanner {
+    flex: 15%;
+    background-color: #06BCA6;
+    border-bottom-left-radius: var(--cardRadius);
+    border-top-left-radius: var(--cardRadius);
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.bannerStripe {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    background-color: #06A894;
+    height: 70px;
+    width: 100%;
+    border-bottom-left-radius: var(--cardRadius);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-family: var(--th_font1);
+    font-weight: 550;
+    font-size: 18px;
+}
+
+.rightBck {
+    flex: 85%;
+    padding: 12px 35px;
+    padding-bottom: 60px;
+}
+
+.cardTitle {
+    margin: 0;    
+    font-family: var(--th_font1);
+    font-weight: 550;
+    font-size: 28px;    
+    color: #0A675C;
+}
+
+.hr1 {
+    width: 100%;    
+    border: 1px solid #d6d6d6;
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;    
+
+    font-family: var(--th_font1);    
+}
+
+.detailUl {
+    margin-top: 16px;
+    padding-left: 14px;
+    color: #626262;
+}
+
+ul>li {
+    margin-bottom: 3px;
+    font-size: 15px;
+}
+
+.detailLbl {
+    font-weight: 800;
+    color: #0A675C;
+}
+
+.joinBtn {
+    background: #0FACAC;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    padding: 4px 18px;
+
+    color: white;
+    font-family: var(--th_font1);    
+    font-size: 16px;
+
+    position: absolute;
+    bottom: 16px;
+    right: 28px;
+}
