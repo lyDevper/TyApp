@@ -17,9 +17,8 @@ db = client.get_database('app_meeting')
 app = Flask(__name__)
 cors = CORS(app)
 
-
-
-@app.route("/login",methods=["GET"])
+#login
+@app.route("/login",methods=["POST"])
 def login():
     try:
         users=db.user
@@ -44,39 +43,72 @@ def login():
     except:
         return {'message':'error'},400
 
+#register
 
-@app.route("/event",methods=["GET"])
-def event():
-    members=db.member_event
+@app.route("/register",methods=["POST"])
+def register():
     try:
-        all_event=[]
-        events = db.event.aggregate([
-                {
-                    '$lookup' : 
-                    {
-                        'from': 'user',
-                        'localField': 'user_id',
-                        'foreignField': 'user_id',
-                        'as': 'user' }
-                },{
-                    '$unwind': '$user'
-                }
-                ])
+        users=db.user
+        user={
+            'user_id':uuid.uuid4().hex,
+            'email':request.json['email'],
+            'username':request.json['username'],
+            'password':request.json['password']
+        }
+        
+        requiredField = [
+                     ("email"),
+                     ("username"),
+                     ("password")
+                     ]
+        
+        for fieldValue in requiredField:
+            if fieldValue not in request.json:
+                return {'message':"Missing field"}, 400
 
-        for e in events:
-            e['member']=members.count_documents({'event_id':e['event_id'],'left_datetime':None})
-            e.pop('_id')
-            e['user'].pop('_id')
-            all_event.append(e)
-        return jsonify({'events':all_event}),200
+        if users.find_one({'email':user['email']}):
+            return {'message':'อีเมลถูกใช้แล้ว'},400
+
+        users.insert_one(user)
+
+        return jsonify(user),200
+        
     except:
         return {'message':'error'},400
+
+#event
+@app.route("/event")
+def event():
+    members=db.member_event
+    all_event=[]
+    events = db.event.aggregate([
+        {
+                '$lookup' : 
+                {
+                    'from': 'user',
+                    'localField': 'user_id',
+                    'foreignField': 'user_id',
+                    'as': 'user' }
+            },{
+                '$unwind': '$user'
+            },
+            {
+                '$unset':'user_id'
+            }
+            ])
+
+    for e in events:
+        e['member']=members.count_documents({'event_id':e['event_id'],'left_datetime':None})
+        e.pop('_id')
+        e['user'].pop('_id')
+        all_event.append(e)
+    return jsonify({'events':all_event}),200
 
 @app.route("/join_event",methods=["POST"])
 def join_event():
     members=db.member_event
     try :
-        amount=request.json['amount']
+        amount=int(request.json['amount'])
         user_id=request.json['user_id']
         event_id=request.json['event_id']
         if(members.count_documents({'event_id':event_id,'left_datetime':None})>=int(amount)):
@@ -116,6 +148,89 @@ def create_event():
         return {'message':'create_event success'},201
     except:
         return {'message':'create_event fail'},400
+
+#chat
+@app.route("/my_group",methods=["GET"])
+def my_event():
+    try:
+        user=request.json['user_id']
+        my_group=[]
+        group = db.member_event.aggregate([
+        {
+                '$match':
+                {
+                    'user_id':user
+                }
+        },
+        {
+                '$lookup' : 
+                {
+                    'from': 'user',
+                    'localField': 'user_id',
+                    'foreignField': 'user_id',
+                    'as': 'user' }
+            },
+            {'$lookup' : 
+                {
+                    'from': 'event',
+                    'localField': 'event_id',
+                    'foreignField': 'event_id',
+                    'as': 'event' }
+            },{
+                '$unwind': '$event'},
+                {'$unwind': '$user'},
+                {'$unset':'event_id'},
+                {'$unset':'user_id'}
+            ])
+
+        for e in group:
+            e['event']['member']=db.member_event.count_documents({'event_id':e['event']['event_id'],'left_datetime':None})
+            e.pop('_id')
+            e['user'].pop('_id')
+            e['event'].pop('_id')
+            my_group.append(e)
+
+        return {'my_group':my_group},200
+    except:
+        return 400
+
+#info
+@app.route("/profile/<string:user_id>",methods=["GET"])
+def profile(user_id):
+    try:
+        user=db.user.find_one({'user_id':user_id})
+        user.pop('_id')
+        return jsonify(user),200
+    except:
+        return 400
+
+@app.route("/event/<string:event_id>",methods=["GET"])
+def info_event(event_id):
+    try:
+        event = db.event.aggregate([
+        {
+                '$match':
+                {
+                    'event_id':event_id
+                }
+        },
+        {
+                '$lookup' : 
+                {
+                    'from': 'user',
+                    'localField': 'user_id',
+                    'foreignField': 'user_id',
+                    'as': 'user' }
+            },{
+                '$unwind': '$user'
+            }
+            ])
+        for e in event:
+            e.pop('_id')
+            e['user'].pop('_id')
+            return jsonify(e),200
+    except:
+        return 400
 
 if __name__ == '__main__':
     app.run(port=PORT,debug=DEBUG)
