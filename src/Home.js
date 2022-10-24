@@ -55,10 +55,11 @@ function Home() {
         <div className={classes.searchPanel}></div>
         <div className={classes.contentDiv}>
           <div className={classes.headBtnDiv}>
+            <NewEvent></NewEvent>
             <button className={classes.mapBtn}>
               <FaMapMarkedAlt></FaMapMarkedAlt>
             </button>
-            <NewEvent></NewEvent>            
+            
           </div>
 
           <div className={classes.eventCards}>
@@ -68,10 +69,9 @@ function Home() {
               (<EventCard key={eventData.event_id} eventData={eventData}></EventCard>))
             }
           </div>
-
+                    
         </div>
-
-       
+        
     </div>
   );
 }
