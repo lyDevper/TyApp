@@ -4,9 +4,9 @@
 }
 
 .card {
-    width: 100%;
-    max-width: 740px;
-    min-height: 240px;
+
+    width: 740px;
+    height: 240px;
     margin: 16px 0;
 
     background-color: white;
