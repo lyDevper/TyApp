@@ -1,0 +1,90 @@
+.PanelBck {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.searchBox {
+    width: 70%;
+    max-width: 700px;
+    padding: 8px 0;
+
+    background: #54B6B6;
+    box-shadow: 0px 1px 12px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.searchInput {
+    width: 86%;
+    height: 28px;
+    border: none;
+    background: #E1F0FF;
+    border-radius: 3px;
+}
+
+/*--------buttons-----------------*/
+.transparentBtn1 {
+    background: none;
+    color: white;    
+    transition-duration: 0.06s;
+}
+
+.transparentBtn1:hover {
+    transform: scale(1.12) translate(0, -1px);
+}
+
+.transparentBtn1>span {
+    font-size: 32px;
+}
+
+.filterBtn {
+    margin-left: 4px;
+}
+
+.chatBtn {
+    position: absolute;
+    left: 30px;
+}
+
+/*--------------------------*/
+.circleBtn1 {
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    color: white;
+    box-shadow: 0px 1px 6px 2px rgba(0, 0, 0, 0.25);
+
+    transition-duration: 0.06s;
+}
+.circleBtn1:hover {
+    transform: scale(1.09) translate(0, 0);
+    box-shadow: 0px 1px 9px 3px rgba(0, 0, 0, 0.25);
+}
+
+.circleBtn1>span {
+    font-size: 28px;
+}
+
+.notiBtn {    
+    background-color: #F25E74;
+
+    position: absolute;
+    right: 100px;
+}
+
+.profileBtn {
+    background-color: #104087;
+
+    position: absolute;
+    right: 40px;
+}

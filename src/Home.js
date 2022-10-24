@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import classes from './Home.module.css';
 
+import HeadPanel from './subComponents/HeadPanel';
 import NewEvent from './subComponents/NewEvent';
 import EventCard from './subComponents/EventCard';
 import Filter from './subComponents/Filter';
@@ -52,7 +53,9 @@ function Home() {
 
   return (
     <div className={classes.backGround}>
-        <div className={classes.searchPanel}></div>
+        <div className={classes.headPanel}>
+          <HeadPanel></HeadPanel>
+        </div>
         <div className={classes.contentDiv}>
           <div className={classes.headBtnDiv}>
             <NewEvent></NewEvent>
