@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import classes from './Profile.module.css';
 import { HiOutlinePencil } from "react-icons/hi";
+import { FiCamera } from "react-icons/fi";
+import { AiFillHome } from "react-icons/ai";
 
 export default function Profile() {
     
@@ -13,6 +15,8 @@ export default function Profile() {
             <div>
             <lebel className={classes.head1}>โปรไฟล์</lebel>
             <hr className={classes.line}></hr>
+            {/* <input type="file" className={classes.profileBtn} /> */}
+            <button className={classes.profileBtn}><FiCamera size={50}/></button>
             </div>
             <br/>
             <br/>
@@ -29,19 +33,19 @@ export default function Profile() {
             <div className={classes.inp2} style={{display: "inline-block"}}>
                 {"email"}
             </div>
-                <button className={classes.btnSave} onClick={() => save()}>บันทึกข้อมูล</button>
+                <button className={classes.btnSave} onClick={() => save(newusername)}>บันทึกข้อมูล</button>
         </div>
         <div className={classes.backBanner}>
-            <button className={classes.btnHome} onClick={() => goHome()}>home</button>
+            <button className={classes.btnHome} onClick={() => goHome()}><AiFillHome size={40}/></button>
             <button className={classes.btnOut} onClick={() => logOut(newusername)}>ออกจากระบบ</button>
         </div>
     </div>
   );
 }
 
-function save(newusername,email) {
+function save(newusername) {
     if(newusername!=''){
-        console.log('Save ' + newusername +' '+email);
+        console.log('Save ' + newusername +' '+"email");
     }
 }
 
@@ -52,5 +56,6 @@ function logOut(username) {
 function goHome() {
     window.location.href='/Home';
 }
+
 
 

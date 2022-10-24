@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
 
 .backGround {
+    overflow: hidden;
     width: 100vw;
     height: 100vh;
-    background-color: #E8E8E8;
+    background-color: #f41515;
 
     display: flex;
     align-items: center;
@@ -11,6 +12,7 @@
 }
 
 .backBanner {
+ 
     position: absolute;
     left: 0;
     height: 100%;
@@ -20,13 +22,14 @@
 
 }
 .contentBlock {
-    padding-left: 50px;
-    padding-top: 130px;
+    overflow: hidden;
+    padding-left: 200px;
+    padding-top: 100px;
     box-sizing: border-box;
     position: absolute;
     right: 0;
     height: 100%;
-    width: 70%;
+    width: 80%;
     background-color: #E8E8E8;
 
 }
@@ -127,13 +130,10 @@
     font-size: 16px;
 }
 .btnHome {
-    padding: 8px 2px;
-    background: #1C53BE;
-    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-
+    background: none;
+    margin-left: 50px;
+    margin-top: 20px;
     color: white;
-    width: 110px;
     font-family: 'Kanit', sans-serif;
 }
 button {
@@ -148,4 +148,14 @@ button {
     height: 1.5px;
     width: 350px;
     border : #9DB4CA;
+}
+
+.profileBtn{
+    margin-left: 400px;
+    background: #ffffff;
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+
+    width: 120px;
+    height: 120px;
 }
