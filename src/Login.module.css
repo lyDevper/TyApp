@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
 
+:root {
+    --th-font: 'Kanit', sans-serif;
+}
+
 .backGround {
     width: 100vw;
     height: 100vh;
@@ -17,11 +21,35 @@
     width: 75%;
     background-color: #3095B5;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
+.descriptTxtDiv {
+    /*width: 85%;*/    
+    position: absolute;
+    left: 11%;
+    right: 40%;
+    top: 17%;
+}
+
+.appTitle {
+    font-family: var(--th-font);
+    color: white;
+}
+
+.descriptTxt {
+    font-family: var(--th-font);
+    color: white;
+}
+
+/*----------------------------*/
 .signInBox {    
-    width: 50%;
-    height: 70%;
+    width: 38%;
+    /*height: 64%;*/
+    height: 460px;
 
     background: #FDFDFD;
     box-shadow: 1px 1px 20px 4px rgba(0, 0, 0, 0.3);
@@ -42,9 +70,17 @@
 
 .head1 {
     margin: 0;
+    margin-top: 8px;
     font-family: 'Kanit', sans-serif;
     color: #2B6C88;
     font-size: 32px;
+}
+
+.formDiv {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin-top: 1%;
 }
 
 .lbl1 {
@@ -52,8 +88,8 @@
     color: #747474;
     font-size: 16px;
 
-    margin-top: 15px;
-    margin-bottom: 3px;
+    margin-top: 6%;
+    margin-bottom: 2%;
 }
 
 .inp1 {
@@ -83,8 +119,20 @@
     width: 110px;
     font-family: 'Kanit', sans-serif;
 }
+.btn1:hover {
+    background: #0d3586;
+}
 
 button {
     cursor: pointer;
     border: none;
+}
+
+.pushedBtn {
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
+    transition-duration: 0.10s;
+}
+.pushedBtn:active {
+    transform: translateY(1.5px);
+    box-shadow: 0px 0.5px 2px 1px rgba(0, 0, 0, 0.20);
 }
