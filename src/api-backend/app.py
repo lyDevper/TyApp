@@ -132,16 +132,17 @@ def create_event():
     try:
         event_id = uuid.uuid4().hex
         user_id = request.json['user_id']
-        event_name = request.json['eventname']
-        type = request.json['type']
+        event_name = request.json['event_name']
+        category = request.json['category']
         date = request.json['date']
-        time = request.json['time']
-        place = request.json['place']
+        start_time = request.json['start_time']
+        end_time = request.json['end_time']
+        location = request.json['location']
         amount = request.json['amount']
-        other = request.json['other']
+        etc = request.json['etc']
         noti = request.json['noti']
 
-        event = {'event_id':event_id,'user_id':user_id,'event_name':event_name,'type':type,'date':date,'time':time,'place':place,'amount':amount,'other':other,'noti':noti}
+        event = {'event_id':event_id,'user_id':user_id,'event_name':event_name,'category':category,'date':date,'start_time':start_time,'end_time':end_time,'location':location,'amount':amount,'etc':etc,'noti':noti}
         events.insert_one(event)
         members_event.insert_one({'event_id':event_id,'user_id':user_id,'joined_datetime':None,'left_datetime':None})
 
@@ -162,14 +163,6 @@ def my_event():
                     'user_id':user
                 }
         },
-        {
-                '$lookup' : 
-                {
-                    'from': 'user',
-                    'localField': 'user_id',
-                    'foreignField': 'user_id',
-                    'as': 'user' }
-            },
             {'$lookup' : 
                 {
                     'from': 'event',
@@ -178,31 +171,53 @@ def my_event():
                     'as': 'event' }
             },{
                 '$unwind': '$event'},
-                {'$unwind': '$user'},
-                {'$unset':'event_id'},
-                {'$unset':'user_id'}
+                {'$unset':'event_id'}
             ])
 
         for e in group:
             e['event']['member']=db.member_event.count_documents({'event_id':e['event']['event_id'],'left_datetime':None})
-            e.pop('_id')
-            e['user'].pop('_id')
             e['event'].pop('_id')
-            my_group.append(e)
+            my_group.append(e['event'])
 
         return {'my_group':my_group},200
     except:
         return 400
 
+
+
 #info
-@app.route("/profile/<string:user_id>",methods=["GET"])
-def profile(user_id):
-    try:
-        user=db.user.find_one({'user_id':user_id})
-        user.pop('_id')
-        return jsonify(user),200
-    except:
-        return 400
+@app.route("/profile",methods=["GET","PUT"])
+def profile():
+    if request.method=="GET":
+        try:
+            user_id = request.json('user_id')
+            user=db.user.find_one({'user_id':user_id})
+            user.pop('_id')
+            return jsonify(user),200
+        except:
+            return 400
+    
+    if request.method=="PUT":
+        try:
+            user_id = request.json('user_id')
+            user = db.user.find_one(user_id)
+            username = request.json('username')
+            email = request.json('email')
+            password = request.json('password')
+
+            if(username==''):
+                username = user['username']
+            
+            if(email==''):
+                email = user['email']
+
+            if(password==''):
+                password = user['password']
+            db.user.update_one({'user_id':user_id},{'username':username,'email':email,'password':password})
+            return {'message':'แก้ไขสำเร็จ'},200
+        except:
+            return 400
+
 
 @app.route("/event/<string:event_id>",methods=["GET"])
 def info_event(event_id):
@@ -223,7 +238,7 @@ def info_event(event_id):
                     'as': 'user' }
             },{
                 '$unwind': '$user'
-            }
+            },{'$unset':'user_id'},
             ])
         for e in event:
             e.pop('_id')
@@ -231,6 +246,9 @@ def info_event(event_id):
             return jsonify(e),200
     except:
         return 400
+
+
+    
 
 if __name__ == '__main__':
     app.run(port=PORT,debug=DEBUG)
