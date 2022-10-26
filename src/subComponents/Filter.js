@@ -21,7 +21,7 @@ return (
     <>
         {/* popup */}
       <button className={classes.transparentBtn1+' '+classes.filterBtn } onClick={openClose}>
-        <span class="material-symbols-rounded">filter_alt</span>
+        <span className="material-symbols-rounded">filter_alt</span>
       </button>
 
       {modal && (

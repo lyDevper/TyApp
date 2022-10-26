@@ -17,7 +17,7 @@ function HeadPanel() {
       <div className={classes.searchBox}>
         <input type="text" className={classes.searchInput} />
         <button className={classes.transparentBtn1}>
-          <span class="material-symbols-rounded">search</span>
+          <span className="material-symbols-rounded">search</span>
         </button>
       </div>
 
@@ -25,13 +25,13 @@ function HeadPanel() {
       <Filter></Filter>
       {/*chat button with mail icon*/}
       <button className={classes.transparentBtn1+' '+classes.chatBtn} onClick={()=>goChat()}>
-        <span class="material-symbols-rounded">mail</span>
+        <span className="material-symbols-rounded">mail</span>
       </button>
       {/*noti button, circle*/}
       <Noti></Noti>
       {/*profile button, circle*/}
       <button className={classes.circleBtn1+' '+classes.profileBtn} onClick={()=>goProfile()}>
-        <span class="material-symbols-rounded">person</span>
+        <span className="material-symbols-rounded">person</span>
       </button>
 
     </div>

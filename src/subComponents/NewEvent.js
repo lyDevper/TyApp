@@ -107,7 +107,7 @@ async function toggleModal(eventname,type,date,time,place,amount,other,noti,moda
     console.log('แจ้งเตือน : '+noti)
 
     //posting data to api to create event
-    const response = await fetch('/api/use', {
+    const response = await fetch('/create_event', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -117,16 +117,17 @@ async function toggleModal(eventname,type,date,time,place,amount,other,noti,moda
         date: date,
         start_time: time,
         end_time: time,
-        location:{
+        location: {
         title: place,
-        'x-coordinate':102.556,
-        'y-coordinate':7.235
+        'x-coordinate': 102.556,
+        'y-coordinate': 7.235
         },
-        'amount':amount,
-        'etc':other,
-        'noti':noti
+        amount: amount,
+        etc: other,
+        noti: noti
       }
-      )})
+    )})
+    console.log('response from posting new event: ' , response);
 
     setModal(!modal);
   }
