@@ -63,7 +63,7 @@ let testData3 =
   noti : true
 }
 //test of received data as a list of json
-let eventDataList = [testData1, testData2,testData3];
+let test_eventDataList = [testData1, testData2,testData3];
 
 function Home() {
   const [eventDataList, setEventDataList] = useState(test_eventDataList);
