@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import classes from './HeadPanel.module.css';
 import Filter from './Filter'
+import Noti from './Noti';
 
 import { FaMapMarkedAlt,  } from "react-icons/fa";
 import Profile from '../subProfile/Profile';
@@ -27,9 +28,7 @@ function HeadPanel() {
         <span class="material-symbols-rounded">mail</span>
       </button>
       {/*noti button, circle*/}
-      <button className={classes.circleBtn1+' '+classes.notiBtn}>
-        <span class="material-symbols-rounded">notifications</span>
-      </button>
+      <Noti></Noti>
       {/*profile button, circle*/}
       <button className={classes.circleBtn1+' '+classes.profileBtn} onClick={()=>goProfile()}>
         <span class="material-symbols-rounded">person</span>
