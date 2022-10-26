@@ -5,11 +5,11 @@ body.active-modal {
 }
 .backGround {
     position: absolute;
-    top: 40%;
-    left: 50%;
+    top: 23%;
+    right: 5%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
-    background: #2c6b75;
+    background: #2384A3;
     padding: 14px 28px;
     border-radius: 12px;
     width: 323px;
@@ -43,7 +43,7 @@ body.active-modal {
     border-radius: 3px;
     
     font-size: 13px;
-    color: #1c5861;
+    color: #266b75;
     margin-left: 9px;
     margin-bottom: 10px;
 }
@@ -54,7 +54,7 @@ body.active-modal {
     border-radius: 3px;
     
     font-size: 13px;
-    color: #1c5861;
+    color: #266b75;
     margin-left: 9px;
     margin-bottom: 10px;
 }
@@ -85,7 +85,8 @@ button {
     z-index: 1;
 }
 .overlay {
-    background: rgba(49,49,49,0.8);
+    background: rgba(92, 92, 92, 0.8);
+    opacity: 20%;
 }
 .transparentBtn1 {
     background: none;

@@ -53,7 +53,7 @@
 
 .chatBtn {
     position: absolute;
-    left: 30px;
+    left: 5%;
 }
 .chatBtn>span {
     font-size: 40px;
