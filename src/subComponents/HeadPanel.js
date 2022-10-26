@@ -23,7 +23,7 @@ function HeadPanel() {
       {/*filter button*/}
       <Filter></Filter>
       {/*chat button with mail icon*/}
-      <button className={classes.transparentBtn1+' '+classes.chatBtn}>
+      <button className={classes.transparentBtn1+' '+classes.chatBtn} onClick={()=>goChat()}>
         <span class="material-symbols-rounded">mail</span>
       </button>
       {/*noti button, circle*/}
@@ -31,12 +31,17 @@ function HeadPanel() {
         <span class="material-symbols-rounded">notifications</span>
       </button>
       {/*profile button, circle*/}
-      <button className={classes.circleBtn1+' '+classes.profileBtn}>
+      <button className={classes.circleBtn1+' '+classes.profileBtn} onClick={()=>goProfile()}>
         <span class="material-symbols-rounded">person</span>
       </button>
 
     </div>
   );
 }
-
+function goChat(){
+  window.location.href='/Chat';
+}
+function goProfile(){
+  window.location.href='/Profile';
+}
 export default HeadPanel;

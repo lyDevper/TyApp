@@ -78,7 +78,7 @@ function Home() {
           <div className={classes.headBtnDiv} >
 
             {/* map button*/}
-            <button className={classes.mapBtn}>
+            <button className={classes.mapBtn} onClick={()=>goMap()}>
               <FaMapMarkedAlt size={30}/>
             </button>
           <br/>
@@ -100,7 +100,9 @@ function Home() {
     </div>
   );
 }
-
+function goMap(){
+  window.location.href='/Map';
+}
 
 
 export default Home;
