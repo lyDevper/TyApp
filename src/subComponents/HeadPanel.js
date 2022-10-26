@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import classes from './HeadPanel.module.css';
+import Filter from './Filter'
 
 import { FaMapMarkedAlt,  } from "react-icons/fa";
+import Profile from '../subProfile/Profile';
+import { faChildRifle } from '@fortawesome/free-solid-svg-icons';
 
 function HeadPanel() {
   //const [username, setUserame] = useState('');    
@@ -18,9 +21,7 @@ function HeadPanel() {
       </div>
 
       {/*filter button*/}
-      <button className={classes.transparentBtn1+' '+classes.filterBtn}>
-        <span class="material-symbols-rounded">filter_alt</span>
-      </button>
+      <Filter></Filter>
       {/*chat button with mail icon*/}
       <button className={classes.transparentBtn1+' '+classes.chatBtn}>
         <span class="material-symbols-rounded">mail</span>

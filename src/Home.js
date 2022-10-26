@@ -45,8 +45,26 @@ let testData2 =
   noti : true
 }
 
+let testData3 = 
+{
+  event_id : '713243',
+  user_id : '054643',
+  event_name : 'เล่นไพ่',
+  category : 'นัทนาการ',
+  date : '18/11/2022',
+  start_time : '13:00',
+  end_time : '16:00',
+  location : {
+      title : 'จามไนน์',
+      x : 101.273,
+      y : 8.452
+  },
+  amount : 4,
+  etc : '',
+  noti : true
+}
 //test of received data as a list of json
-let eventDataList = [testData1, testData2];
+let eventDataList = [testData1, testData2,testData3];
 
 function Home() {
   //const [username, setUserame] = useState('');    

@@ -20,8 +20,8 @@ function Filter() {
 return (
     <>
         {/* popup */}
-      <button onClick={openClose} className={classes.btn1}>
-        Open
+      <button className={classes.transparentBtn1+' '+classes.filterBtn } onClick={openClose}>
+        <span class="material-symbols-rounded">filter_alt</span>
       </button>
 
       {modal && (

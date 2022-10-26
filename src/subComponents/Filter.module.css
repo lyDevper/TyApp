@@ -14,6 +14,7 @@ body.active-modal {
     border-radius: 12px;
     width: 323px;
     height: 100px;
+    z-index: 2;
 }
 
 /*----------------------------------*/
@@ -81,7 +82,25 @@ button {
     right: 0;
     bottom: 0;
     position: fixed;
+    z-index: 1;
 }
 .overlay {
     background: rgba(49,49,49,0.8);
+}
+.transparentBtn1 {
+    background: none;
+    color: white;    
+    transition-duration: 0.06s;
+}
+
+.transparentBtn1:hover {
+    transform: scale(1.12) translate(0, -1px);
+}
+
+.transparentBtn1>span {
+    font-size: 32px;
+}
+
+.filterBtn {
+    margin-left: 4px;
 }
