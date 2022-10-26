@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import classes from './Home.module.css';
 
 import HeadPanel from './subComponents/HeadPanel';
@@ -44,7 +44,6 @@ let testData2 =
   etc : '',
   noti : true
 }
-
 let testData3 = 
 {
   event_id : '713243',
@@ -67,7 +66,27 @@ let testData3 =
 let eventDataList = [testData1, testData2,testData3];
 
 function Home() {
-  //const [username, setUserame] = useState('');    
+  const [eventDataList, setEventDataList] = useState(test_eventDataList);
+  
+  //using api to fetch from flask
+  useEffect(() => {
+    // Using fetch to fetch the api from 
+    // flask server it will be redirected to proxy
+    fetch("/event").then((res) =>
+        res.json().then((data) => {
+            // Setting a data from api
+            console.log(data.events);
+            try {
+              setEventDataList(data.events);
+              // set a new state with recieved data to render contents              
+            }
+            catch {
+              console.error('cannot set eventData');
+            }
+            
+        })
+    );
+  }, []);
 
   return (
     <div className={classes.backGround}>
@@ -100,6 +119,7 @@ function Home() {
     </div>
   );
 }
+
 function goMap(){
   window.location.href='/Map';
 }
