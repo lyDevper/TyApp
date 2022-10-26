@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from 'react'
-import classes from './Home.module.css';
+import classes from "./Map.css"
 import { useMapEvents } from "react-leaflet";
 import EventCard from './subComponents/EventCard';
 import { MapContainer, TileLayer,Popup,Marker,Circle,CircleMarker} from 'react-leaflet';
-import './Map.css';
 import {AiFillHome} from "react-icons/ai"
+import './Map.css';
 
 let testData1 = 
 {
@@ -47,14 +47,19 @@ let testData2 =
 let eventDataList = [testData1, testData2];
 function Map() {
   return (
+    <div className={classes.bckDiv}>
     <MapContainer center={[13.73826 ,100.532413]} zoom={18} scrollWheelZoom={false}>
     <TileLayer
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
+
     <MarkerEvents />
     <LocationMarker />
   </MapContainer>
+    <div className="homeico" onClick={() => gHome()}><AiFillHome size={40}/></div>
+  
+  </div>
   );
 }
 
@@ -90,6 +95,9 @@ function MarkerEvents() {
             </Popup>
       </Marker>
   ))
+}
+function gHome(){
+  window.location.href='/Home';
 }
 
 export default Map;

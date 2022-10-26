@@ -1,8 +1,18 @@
+.bckDiv{
+  width: 100%;
+  height: 100%;
+}
 .leaflet-container {
     width: 100vw;
     height: 100vh;
   }
-  .backpop{
-    width: 800px;
-    height: 240px;
-  }
+.backpop{
+  width: 800px;
+  height: 240px;
+}
+.homeico{
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  z-index: 20000;
+}  
