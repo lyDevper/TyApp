@@ -21,15 +21,26 @@
     
 
 }
-.contentBlock {
+.contentbg {
     overflow: hidden;
-    padding-left: 15%;
-    padding-top: 5%;
-    box-sizing: border-box;
     position: absolute;
     right: 0;
     height: 100vh;
     width: 80vw;
+    background-color: #E8E8E8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contentBlock {
+    height: max-content;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    position: relative;
+    left: 15%;
     background-color: #E8E8E8;
 
 }
@@ -39,50 +50,44 @@
     font-family: 'Kanit', sans-serif;
     color: #2B6C88;
     font-weight: 300;
-    font-size: 35px;
+    font-size: 300%;
 }
 
 .lbl1 {
     font-family: 'Kanit', sans-serif;
     color: #547878;
-    font-size: 20px;
+    font-size: 125%;
 
-    margin-top: 50px;
-    margin-bottom: 3px;
 }
 .lbl2 {
     font-family: 'Kanit', sans-serif;
     color: #547878;
-    font-size: 20px;
+    font-size: 125%;
 
-    margin-top: 50px;
-    margin-bottom: 3px;
     margin-left: 40px;
 }
 
 .inp2 {
-    padding-left: 20px;
-    height: 30px;
-    width: 500px;
+    width: 53%;
     background: #F7F7F7;
     border: 1px solid rgba(187, 187, 187, 0.853);
     border-radius: 3px;
     box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
     
-    font-size: 18px;
+    font-size: 125%;
     color: #5a5a5a;
     margin-top: 30px;
+    padding-left: 2%;
     margin-left: 20px;
 }
 .inp1 {
-    height: 30px;
-    width: 520px;
+    width: 55%;
     background: #F7F7F7;
     border: 1px solid rgba(187, 187, 187, 0.853);
     border-radius: 3px;
     box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
     
-    font-size: 18px;
+    font-size: 125%;
     color: #5a5a5a;
     margin-top: 30px;
     margin-left: 20px;
@@ -90,49 +95,49 @@
 .realinp{
     padding-left: 20px;
     height: 25px;
-    width: 470px;
+    width: 90%;
     background: #F7F7F7;
     border: 1px solid #F7F7F7;
 
     
-    font-size: 18px;
+    font-size: 100%;
     color: #5a5a5a;
 
 }
-.inpicon {
-    background: #F7F7F7;
 
-}
 
 .btnSave {
     padding: 8px 2px;
-    margin: 50px 500px;
+    margin-top: 50px;
+    margin-left: 50%;
     background: #077CD0;
     box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
     border-radius: 3px;
 
     color: white;
-    width: 90px;
+    width: 12%;
     font-family: 'Kanit', sans-serif;
+    font-size: 100%;
 }
 
 .btnOut {
     padding: 4% 3%;
-    margin-top: 170%;
-    margin-left: 60%;
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
     background: #155275;
     box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
 
     color: white;
-    width: 150px;
+    width: 68%;
     font-family: 'Kanit', sans-serif;
-    font-size: 16px;
+    font-size: 120%;
 }
 .btnHome {
     background: none;
-    margin-left: 50px;
-    margin-top: 20px;
+    margin-left: 20%;
+    margin-top: 10%;
     color: white;
     font-family: 'Kanit', sans-serif;
 }
@@ -146,16 +151,16 @@ button {
     color: #9DB4CA;
     background: #9DB4CA;
     height: 1.5px;
-    width: 350px;
+    width: 50%;
     border : #9DB4CA;
 }
 
 .profileBtn{
-    margin-left: 400px;
+    margin-left: 40%;
     background: #ffffff;
     box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.25);
     border-radius: 50%;
 
-    width: 120px;
-    height: 120px;
+    width: 10vw;
+    height: 10vw;
 }
