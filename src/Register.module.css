@@ -12,15 +12,17 @@
 
 .backBanner {
     margin-top: 330px;
-    height: 40%;
+    height: 30%;
     width: 100%;
     background-color: #3095B5;
+    position: absolute;
+    bottom: 0;
 
 }
 
 .signUpBox {    
     width: 50%;
-    height: 70%;
+    height: 440px;
 
     background: #FDFDFD;
     box-shadow: 1px 1px 20px 4px rgba(0, 0, 0, 0.3);

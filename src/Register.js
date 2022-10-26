@@ -12,8 +12,8 @@ function Register() {
 
   return (
     <div className={classes.backGround}>
-        {/* <div className={classes.backBanner}>
-        </div> */}
+        <div className={classes.backBanner}>
+        </div> 
         <div className={classes.signUpBox}>
             <h2 className={classes.head1}>สมัครสมาชิก</h2>
             <label className={classes.lbl1}>Username <FaUserAlt/></label>
