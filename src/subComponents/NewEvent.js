@@ -94,7 +94,7 @@ return (
   )
 }
 
-function toggleModal(eventname,type,date,time,place,amount,other,noti,modal,setModal){
+async function toggleModal(eventname,type,date,time,place,amount,other,noti,modal,setModal){
   if (eventname!=''&&date!=''&&time!=''&&place!=''&&amount!=''){
     console.log('New Event')
     console.log('Event : '+ eventname)
@@ -105,6 +105,29 @@ function toggleModal(eventname,type,date,time,place,amount,other,noti,modal,setM
     console.log('จำนวนคน : '+amount)
     console.log('อื่นๆ : '+other)
     console.log('แจ้งเตือน : '+noti)
+
+    //posting data to api to create event
+    const response = await fetch('/api/use', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        event_name: eventname,
+        user_id: "557af66f0c1348448fd61a719425e742" ,
+        category: type,
+        date: date,
+        start_time: time,
+        end_time: time,
+        location:{
+        title: place,
+        'x-coordinate':102.556,
+        'y-coordinate':7.235
+        },
+        'amount':amount,
+        'etc':other,
+        'noti':noti
+      }
+      )})
+
     setModal(!modal);
   }
 };

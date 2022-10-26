@@ -3,7 +3,6 @@ import React, { Component, createRef } from "react";
 import "./ChatContent.css";
 import Avatar from "./Avatar";
 import ChatItem from "./ChatItem";
-import { AiOutlineSend } from "react-icons/ai";
 
 export default class ChatContent extends Component {
   messagesEndRef = createRef(null);
@@ -42,7 +41,7 @@ export default class ChatContent extends Component {
             key: 1,
             type: "",
             msg: this.state.msg,
-            image: "https://cdn-icons-png.flaticon.com/512/616/616430.png",
+            image: "https://cdn-icons-png.flaticon.com/512/3094/3094837.png",
           });
           this.setState({ chat: [...this.chatItms] });
           this.scrollToBottom();
@@ -63,11 +62,18 @@ export default class ChatContent extends Component {
           <div className="blocks">
             <div className="current-chatting-user">
               <Avatar
-                className="avatar-img"
                 isOnline="active"
                 image="https://cdn-icons-png.flaticon.com/512/2828/2828920.png"
               />
               <p>ตี้ตีแบด</p>
+            </div>
+          </div>
+
+          <div className="blocks">
+            <div className="settings">
+              <button className="btn-nobg">
+                <i className="fa fa-cog"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -89,14 +95,17 @@ export default class ChatContent extends Component {
         </div>
         <div className="content__footer">
           <div className="sendNewMessage">
+            <button className="addFiles">
+              <i className="fa fa-plus"></i>
+            </button>
             <input
               type="text"
-              placeholder="   Type a message here"
+              placeholder="Type a message here"
               onChange={this.onStateChange}
               value={this.state.msg}
             />
             <button className="btnSendMsg" id="sendMsgBtn">
-              <AiOutlineSend size={35} />
+              <i className="fa fa-paper-plane"></i>
             </button>
           </div>
         </div>

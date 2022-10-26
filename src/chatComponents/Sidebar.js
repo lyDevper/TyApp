@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Sidebar.css";
 import ChatListItems from "./SidebarItems";
-import { AiFillHome } from "react-icons/ai";
 
 export default class ChatList extends Component {
   allChatUsers = [
@@ -10,12 +9,14 @@ export default class ChatList extends Component {
       id: 1,
       name: "ตี้ตีแบด",
       active: true,
+      isOnline: true,
     },
     {
       image: "https://cdn-icons-png.flaticon.com/512/5745/5745661.png",
       id: 2,
       name: "หาตี้บุฟเฟ่ต์",
       active: false,
+      isOnline: false,
     },
     {
       image:
@@ -23,12 +24,14 @@ export default class ChatList extends Component {
       id: 3,
       name: "หาเพื่อนอ่านหนังสือครับ",
       active: false,
+      isOnline: false,
     },
     {
       image: "https://cdn-icons-png.flaticon.com/512/3094/3094837.png",
       id: 4,
       name: "มานอนกันเหอะ",
       active: false,
+      isOnline: true,
     },
   ];
   constructor(props) {
@@ -40,24 +43,19 @@ export default class ChatList extends Component {
   render() {
     return (
       <div className="main__chatlist">
+        <button onClick={() => backToHome()}>home</button>
         <div className="chatlist__heading">
-          <button className="btnHome" onClick={() => backToHome()}>
-            <AiFillHome size={40} />
+          <button className="btn-nobg">
+            <i className="fa fa-ellipsis-h"></i>
           </button>
         </div>
         <div className="chatList__search">
-          <div className="searchBox">
-            <input type="text" className="searchInput" />
-            <button className="transparentBtn1">
-              <span class="material-symbols-rounded">search</span>
-            </button>
-          </div>
-          {/* <div className="search_wrap">
+          <div className="search_wrap">
             <input type="text" placeholder="Search Here" required />
             <button className="search-btn">
               <i className="fa fa-search"></i>
             </button>
-          </div> */}
+          </div>
         </div>
         <div className="chatlist__items">
           {this.state.allChats.map((item, index) => {
@@ -67,6 +65,7 @@ export default class ChatList extends Component {
                 key={item.id}
                 animationDelay={index + 1}
                 active={item.active ? "active" : ""}
+                isOnline={item.isOnline ? "active" : ""}
                 image={item.image}
               />
             );

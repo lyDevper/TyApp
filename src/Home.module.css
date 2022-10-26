@@ -1,113 +1,81 @@
 :root {
-  --th_font1: "Kanit", sans-serif;
+    --th_font1: 'Kanit', sans-serif;
 }
 
 .backGround {
-  overflow-x: hidden;
-  background-color: #eef3f8;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+    overflow-x: hidden;
+    background-color: #EEF3F8;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 .frontGround {
-  width: 0vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: fixed;
-  padding-left: 2vw;
-  padding-top: 80vh;
-  background-color: #eef3f8;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #eef3f8;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-.frontGround {
-  width: 0vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: fixed;
-  padding-left: 5vw;
-  padding-top: 80vh;
-}
-.frontGround {
-  width: 0vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: fixed;
-  padding-left: 5vw;
-  padding-top: 80vh;
-  pointer-events: none; /*make overlapping div not ckicked*/
+    width: 0vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    padding-left: 5vw;
+    padding-top: 80vh;
+    /*pointer-events: none;*/ /*make overlapping div not ckicked*/
 }
 
-.searchPanel {
-  width: 100%;
-  height: 70px;
-  position: relative;
-  top: 0px;
+.headPanel {
+    width: 100%;
+    height: 70px;
+    position: relative;
+    top: 0px;
 
-  background: #2384a3;
-  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+    background: #2384A3;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
 }
 
 .contentDiv {
-  width: 100;
-  height: 100%;
-  padding-left: 20%;
-  padding-right: 20%;
+    height: 80vh;    
+    padding-left: 20%;
+    padding-right: 20%;
 
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .headBtnDiv {
-  width: 100%;
-  padding: 22px 0;
-  position: relative;
+    margin-top: 2%;
+    width: 100%;
+    height: 20vh;
+    position: relative;
 }
 
 .newEventBtn {
-  background: linear-gradient(262.65deg, #1a42cf 14.21%, #1190c7 87.03%);
-  box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.3);
-  border-radius: 8px 40px 40px 8px;
-  padding: 8px;
-  width: 140px;
+    background: linear-gradient(262.65deg, #1A42CF 14.21%, #1190C7 87.03%);
+    box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 8px 40px 40px 8px;
+    padding: 8px;
+    width: 140px;
 
-  font: 20px var(--th_font1);
-  color: white;
+    font: 20px var(--th_font1);
+    color: white;
 }
 
 .mapBtn {
-  position: absolute;
-  right: 0;
+    position: absolute;
+    right: 0;
 
-  background: #12bf76;
-  box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  padding: 8px 14px;
+    background: #12BF76;
+    box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    height: 40px;
+    width: 70px;
 
-  font: 20px var(--th_font1);
-  color: white;
+    color: white;
 }
 
 .eventCards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
 }
