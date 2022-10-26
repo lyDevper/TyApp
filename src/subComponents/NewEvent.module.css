@@ -155,4 +155,11 @@ button {
     width: 70px;
     height: 70px;
     color: white;
+
+    transition-duration: 3s;
 }
+/*
+.newEventBtn:hover {
+    background: linear-gradient(262.65deg, #5447e2 14.21%, #b123ac 87.03%);
+}
+*/
