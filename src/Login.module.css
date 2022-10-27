@@ -42,6 +42,7 @@
 .appTitle {
     font-family: var(--th-font);
     color: white;
+    font-size: 36px;
 }
 
 .descriptTxt {
