@@ -51,7 +51,7 @@ export default class ChatList extends Component {
     {
       image: "https://cdn-icons-png.flaticon.com/512/3094/3094837.png",
       id: 4,
-      name: "movie time",
+      name: "movie timeeeeeeeeeeeeeee",
       active: false,
     },
   ];
