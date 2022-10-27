@@ -93,6 +93,7 @@
 }
 .chat__msg {
   user-select: none;
+  word-wrap: break-word;
 }
 
 .chat__item.other {
