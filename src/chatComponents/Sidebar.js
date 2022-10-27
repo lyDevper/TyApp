@@ -6,52 +6,42 @@ import { AiFillHome } from "react-icons/ai";
 export default class ChatList extends Component {
   allChatUsers = [
     {
-      image: "https://cdn-icons-png.flaticon.com/512/2828/2828920.png",
+      image: "https://cdn-icons-png.flaticon.com/512/5745/5745661.png",
       id: 1,
-      name: "ตี้ตีแบด",
+      name: "หิวบุฟเฟ่ต์ (5/5)",
       active: true,
     },
     {
-      image: "https://cdn-icons-png.flaticon.com/512/5745/5745661.png",
+      image: "https://cdn-icons-png.flaticon.com/512/2828/2828920.png",
       id: 2,
-      name: "หาตี้บุฟเฟ่ต์",
+      name: "ตีแบตกัน (2/5)",
       active: false,
     },
     {
       image:
-        "https://i.pinimg.com/originals/2c/fc/93/2cfc93d7665f5d7728782700e50596e3.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Backpack_icon.svg/1200px-Backpack_icon.svg.png",
       id: 3,
-      name: "หาเพื่อนอ่านหนังสือครับ",
+      name: "ไปท่องเที่ยวกัน (6/8)",
       active: false,
     },
     {
-      image: "https://cdn-icons-png.flaticon.com/512/3094/3094837.png",
+      image:
+        "https://i.pinimg.com/originals/c9/21/f6/c921f6fb856a99caad2f52da8c7e5220.jpg",
       id: 4,
-      name: "มานอนกันเหอะ",
+      name: "ดูโดราเอม่อน (4/5)",
       active: false,
     },
     {
-      image: "https://cdn-icons-png.flaticon.com/512/3094/3094837.png",
-      id: 4,
-      name: "มานอนกันเหอะ",
+      image:
+        "https://toppng.com/uploads/preview/anxiety-disorders-stress-clipart-transparent-11563334262bsaqrthoru.png",
+      id: 5,
+      name: "หาคนติวดิสครีส (1/10)",
       active: false,
     },
     {
-      image: "https://cdn-icons-png.flaticon.com/512/3094/3094837.png",
-      id: 4,
-      name: "มานอนกันเหอะ",
-      active: false,
-    },
-    {
-      image: "https://cdn-icons-png.flaticon.com/512/3094/3094837.png",
-      id: 4,
-      name: "มานอนกันเหอะ",
-      active: false,
-    },
-    {
-      image: "https://cdn-icons-png.flaticon.com/512/3094/3094837.png",
-      id: 4,
-      name: "movie timeeeeeeeeeeeeeee",
+      image: "https://cdn-icons-png.flaticon.com/512/2829/2829086.png",
+      id: 6,
+      name: "เล่นบอร์ดเกม (16/16)",
       active: false,
     },
   ];
