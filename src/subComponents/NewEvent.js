@@ -52,6 +52,9 @@ return (
                 <option value="กีฬา">กีฬา</option>
                 <option value="อาหาร">อาหาร</option>
                 <option value="บิวตี้">บิวตี้</option>
+                <option value="นันทนาการ">นันทนาการ</option>
+                <option value="ท่องเที่ยว">ท่องเที่ยว</option>
+                <option value="การเรียน">การเรียน</option>
             </select>
             {/* date */}
             <br/>
