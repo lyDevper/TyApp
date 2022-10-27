@@ -10,8 +10,11 @@ function Login() {
     <div className={classes.backGround}>
         <div className={classes.backBanner}>
             <div className={classes.descriptTxtDiv}>
-                <h1 className={classes.appTitle}>ชื่อแอปโตโต๊โต</h1>
-                <h1 className={classes.appTitle}>ตามหาเพื่อนร่วมทาง</h1>
+                <h1 className={classes.appTitle}>Nutty นัดตี้</h1>
+                <h1 className={classes.appTitle}>ตามหาเพื่อนร่วมตี้ เมื่อคุณขาดเพื่อน</h1>
+                <p className={classes.descriptTxt}>
+                    เว็บหาเพื่อนร่วมทำกิจกรรม Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet eum . Laborum dolorem accusamus quo provident?
+                </p>
                 <p className={classes.descriptTxt}>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores minima ullam illo a harum commodi nesciunt vel at. Alias unde iusto sunt dicta maxime accusamus illum autem ex voluptates dolorem.
                 </p>

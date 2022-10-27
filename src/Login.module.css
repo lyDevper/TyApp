@@ -25,6 +25,10 @@
     justify-content: center;
     align-items: center;
     
+    background-image: url('../public/LoginBkg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
 }
 
 .descriptTxtDiv {
@@ -38,6 +42,7 @@
 .appTitle {
     font-family: var(--th-font);
     color: white;
+    font-size: 36px;
 }
 
 .descriptTxt {
