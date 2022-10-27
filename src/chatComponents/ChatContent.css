@@ -6,11 +6,10 @@
   background-color: #e0f8ff;
 }
 .content__header {
+  margin-bottom: 2%;
+  padding-left: 5%;
+  height: 12%;
   background-color: #2384a3;
-  padding-bottom: 15px;
-  border-bottom: 10px solid #e0f8ff;
-  padding: 20px;
-  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,7 +29,8 @@
   color: #000;
 }
 .content__body {
-  overflow: auto;
+  height: 73% ;
+  overflow-y: scroll;
 }
 .chat__item {
   display: flex;

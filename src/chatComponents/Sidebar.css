@@ -32,6 +32,7 @@
 }
 
 .searchInput {
+  padding-left: 5%;
   width: 80%;
   height: 30px;
   border: none;
@@ -63,10 +64,10 @@
 }
 
 .chatlist__items {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  overflow-y: scroll;
+  margin-top: 4%;
   overflow: auto;
-  height: 80%;
+  height: 75%;
 }
 
 .chatlist__item {

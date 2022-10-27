@@ -30,6 +30,30 @@ export default class ChatList extends Component {
       name: "มานอนกันเหอะ",
       active: false,
     },
+    {
+      image: "https://cdn-icons-png.flaticon.com/512/3094/3094837.png",
+      id: 4,
+      name: "มานอนกันเหอะ",
+      active: false,
+    },
+    {
+      image: "https://cdn-icons-png.flaticon.com/512/3094/3094837.png",
+      id: 4,
+      name: "มานอนกันเหอะ",
+      active: false,
+    },
+    {
+      image: "https://cdn-icons-png.flaticon.com/512/3094/3094837.png",
+      id: 4,
+      name: "มานอนกันเหอะ",
+      active: false,
+    },
+    {
+      image: "https://cdn-icons-png.flaticon.com/512/3094/3094837.png",
+      id: 4,
+      name: "movie time",
+      active: false,
+    },
   ];
   constructor(props) {
     super(props);
