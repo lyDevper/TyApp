@@ -54,7 +54,9 @@ return (
                 <option value="บิวตี้">บิวตี้</option>
                 <option value="นันทนาการ">นันทนาการ</option>
                 <option value="ท่องเที่ยว">ท่องเที่ยว</option>
+                <option value="กิจกรรม">กิจกรรม</option>
                 <option value="การเรียน">การเรียน</option>
+                <option value="คนเหงา">คนเหงา</option>
             </select>
             {/* date */}
             <br/>
@@ -133,6 +135,11 @@ async function toggleModal(eventname,type,date,time,place,amount,other,noti,moda
     console.log('response from posting new event: ' , response);
 
     setModal(!modal);
+    /*
+    setTimeout(() => {
+      location.reload(); //just make it refresh
+    }, 120);
+    */
   }
 };
 
