@@ -12,13 +12,19 @@ export default class ChatContent extends Component {
       key: 1,
       image: "https://cdn-icons-png.flaticon.com/512/616/616430.png",
       type: "",
-      msg: "อย่าลืมเอาไม้แบดมานะ",
+      msg: "อยากรู้",
     },
     {
       key: 2,
+      image: "https://cdn-icons-png.flaticon.com/512/616/616430.png",
+      type: "",
+      msg: "ทำไมโปร 4 จ่าย 3 ถึงนัด 5 คน",
+    },
+    {
+      key: 3,
       image: "https://cdn-icons-png.flaticon.com/512/2219/2219694.png",
       type: "other",
-      msg: "เคคคค",
+      msg: "เพราะคนนึงเป็นเจ้าของร้าน",
     },
   ];
 
@@ -65,9 +71,9 @@ export default class ChatContent extends Component {
               <Avatar
                 className="avatar-img"
                 isOnline="active"
-                image="https://cdn-icons-png.flaticon.com/512/2828/2828920.png"
+                image="https://cdn-icons-png.flaticon.com/512/5745/5745661.png"
               />
-              <p>ตี้ตีแบด</p>
+              <p>หิวบุฟเฟ่ต์ (5/5)</p>
             </div>
           </div>
         </div>
